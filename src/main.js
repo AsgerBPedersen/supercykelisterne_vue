@@ -15,13 +15,12 @@ Vue.use(VueApollo);
 Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 
+Vue.config.productionTip = false;
+
 const router = new VueRouter({
   routes,
   mode: "history"
 });
-
-Vue.config.productionTip = false;
-
 
 const apolloProvider = new VueApollo({
   defaultClient: ApolloClient
@@ -30,5 +29,5 @@ const apolloProvider = new VueApollo({
 new Vue({
   render: h => h(App),
   router,
-  provide: apolloProvider.provide()
+  apolloProvider,
 }).$mount("#app");
