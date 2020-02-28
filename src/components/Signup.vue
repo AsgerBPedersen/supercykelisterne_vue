@@ -61,6 +61,7 @@
 
 <script>
 import {gql} from "apollo-boost";
+import { store } from "../store";
 
 export default {
   name: "signup",
@@ -93,6 +94,7 @@ export default {
       }).then((data) => {
       // Result
       console.log(data)
+      store.refreshUser();
     }).catch((error) => {
       // Error
       console.error(error)
