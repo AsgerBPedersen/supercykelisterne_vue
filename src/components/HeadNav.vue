@@ -32,12 +32,25 @@
         </ul>
       </nav>
     </div>
+      <div class="d-flex">
+                <Signout v-if="state.user"></Signout>
+              </div>
   </div>
 </template>
 
 <script>
+import Signout from "./Signout";
+import {store} from "../store";
 export default {
-  name: "HeadNav"
+  name: "HeadNav",
+  data() {
+    return {
+      state: store.state
+    }
+  },
+  components: {
+    Signout
+  }
 };
 </script>
 
