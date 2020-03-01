@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import {gql} from "apollo-boost";
+import { gql } from "apollo-boost";
 import { store } from "../store";
 
 export default {
@@ -76,35 +76,38 @@ export default {
   methods: {
     createUser(e) {
       e.preventDefault();
-      this.$apollo.mutate({
-        mutation: gql`
-          mutation SIGNUP($email: String!, $name: String!, $password: String!) {
-            createUser(email: $email, name: $name, password: $password) {
-              id
-              email
-              name
+      this.$apollo
+        .mutate({
+          mutation: gql`
+            mutation SIGNUP(
+              $email: String!
+              $name: String!
+              $password: String!
+            ) {
+              createUser(email: $email, name: $name, password: $password) {
+                id
+                email
+                name
+              }
             }
+          `,
+          variables: {
+            email: this.email,
+            name: this.name,
+            password: this.password
           }
-        `,
-        variables: {
-          email: this.email,
-          name: this.name,
-          password: this.password
-        }
-      }).then((data) => {
-      // Result
-      console.log(data)
-      store.refreshUser();
-    }).catch((error) => {
-      // Error
-      console.error(error)
-      // We restore the initial user input
-    });
-      
+        })
+        .then(() => {
+          // Result
+          store.refreshUser();
+        })
+        .catch(error => {
+          // Error
+          console.error(error);
+        });
     }
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>
