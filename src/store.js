@@ -15,17 +15,16 @@ const CURRENT_USER = gql`
   }
 `;
 
-
 export const store = {
   state: {
-    user: null
+    user: {}
   },
   refreshUser() {
-      apolloClient
-      .query({ query: CURRENT_USER, fetchPolicy: 'no-cache' })
+    apolloClient
+      .query({ query: CURRENT_USER, fetchPolicy: "no-cache" })
       .then(data => {
         console.log(data);
-        this.state.user = data.data.currentUser
+        this.state.user = data.data.currentUser;
       })
       .catch(err => console.log(err));
   }
