@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-around container">
+
     <div>
       <form method="post" v-on:submit="sumbitChanges($event)">
         <h4 class="text-center p-3">RET DINE BRUGEROPLYSNINGER</h4>
@@ -45,7 +45,7 @@
         </div>
       </form>
     </div>
-  </div>
+
 </template>
 
 <script>
