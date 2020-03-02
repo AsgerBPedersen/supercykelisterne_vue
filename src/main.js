@@ -3,8 +3,9 @@ import App from "./App.vue";
 import VueRouter from "vue-router";
 import { BootstrapVue } from "bootstrap-vue";
 import { routes } from "./router";
-import ApolloClient from "./apolloCient";    
+import ApolloClient from "./apolloCient";
 import VueApollo from "vue-apollo";
+import { store } from './store';
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -22,11 +23,14 @@ const router = new VueRouter({
 
 const apolloProvider = new VueApollo({
   defaultClient: ApolloClient
-})
+});
 
 // eslint-disable-next-line
 new Vue({
   render: h => h(App),
   router,
-  apolloProvider
+  apolloProvider,
+  created() {
+    store.refreshUser();
+  }
 }).$mount("#app");
