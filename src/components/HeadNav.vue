@@ -15,38 +15,47 @@
             </router-link>
           </li>
           <li class="nav-item m-2">
-            <router-link class="nav-link text-dark font-weight-bold" to="/medlemmer">
+            <router-link
+              class="nav-link text-dark font-weight-bold"
+              to="/medlemmer"
+            >
               Medlemmer
             </router-link>
           </li>
           <li class="nav-item m-2">
-            <router-link class="nav-link text-dark font-weight-bold" to="/om-os">
+            <router-link
+              class="nav-link text-dark font-weight-bold"
+              to="/om-os"
+            >
               Om klubben
             </router-link>
           </li>
           <li class="nav-item m-2">
-            <router-link class="nav-link text-dark font-weight-bold" to="/konto">
+            <router-link
+              class="nav-link text-dark font-weight-bold"
+              to="/konto"
+            >
               Medlemsområde
             </router-link>
           </li>
         </ul>
       </nav>
     </div>
-      <div class="d-flex">
-                <Signout v-if="state.user"></Signout>
-              </div>
+    <div class="d-flex">
+      <Signout v-if="state.user"></Signout>
+    </div>
   </div>
 </template>
 
 <script>
 import Signout from "./Signout";
-import {store} from "../store";
+import { store } from "../store";
 export default {
   name: "HeadNav",
   data() {
     return {
       state: store.state
-    }
+    };
   },
   components: {
     Signout

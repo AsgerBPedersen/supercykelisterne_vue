@@ -1,5 +1,7 @@
 <template>
-  <button class="btn btn-primary align-self-center m-5" @click="signout">LOG UD</button>
+  <button class="btn btn-primary align-self-center m-5" @click="signout">
+    LOG UD
+  </button>
 </template>
 
 <script>

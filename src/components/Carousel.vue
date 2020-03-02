@@ -5,19 +5,19 @@
 </template>
 
 <script>
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 export default {
   name: "carousel",
   apollo: {
-      images: gql`
-    query {
+    images: gql`
+      query {
         randomPhotos {
-        id
-        url
+          id
+          url
         }
-    }
-`
+      }
+    `
   },
   mounted: function() {
     var slides = document.querySelectorAll(".slide");
@@ -40,5 +40,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

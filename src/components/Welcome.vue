@@ -1,11 +1,12 @@
 <template>
-  <div>welcome
+  <div>
+    welcome
 
-  <!-- <carousel></carousel> -->
-  <div class="d-flex justify-content-around container p-5">
-  <signup v-if="!state.user"></signup>
-  <signin v-if="!state.user"></signin>        
-        </div>
+    <!-- <carousel></carousel> -->
+    <div class="d-flex justify-content-around container p-5">
+      <signup v-if="!state.user"></signup>
+      <signin v-if="!state.user"></signin>
+    </div>
   </div>
 </template>
 
@@ -20,16 +21,14 @@ export default {
   data() {
     return {
       state: store.state
-    }
+    };
   },
-    components: {
-        // Carousel
-        Signup,
-        Signin
-    }
-}
+  components: {
+    // Carousel
+    Signup,
+    Signin
+  }
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
